@@ -38,4 +38,13 @@ public class StudentService {
             return returnObj.toString();
         }
     }
+
+    public String addStudent(Student student) {
+        Student savedStudent = studentRepository.save(student);
+        return new JSONObject(savedStudent).toString();
+    }
+
+    public void deleteStudent(Integer id) {
+        studentRepository.deleteById(id);
+    }
 }

@@ -37,4 +37,13 @@ public class ProfessorService {
             return returnObj.toString();
         }
     }
+
+    public String addProfessor(Professor professor) {
+        Professor savedProfessor = professorRepository.save(professor);
+        return new JSONObject(savedProfessor).toString();
+    }
+
+    public void deleteProfessor(Integer id) {
+        professorRepository.deleteById(id);
+    }
 }
